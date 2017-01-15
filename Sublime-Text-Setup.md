@@ -37,3 +37,14 @@ I've spent embarrassingly much time messing with Sublime's user settings file [R
 + [**Theme - Kronuz:**](https://github.com/Kronuz/Kronuz-Theme) Kronuz theme source
 + [**Theme - Toxin:**](https://github.com/p3lim/sublime-toxin) Toxin theme source
 + [**zz File Icons:**](https://github.com/ihodev/sublime-file-icons) Expands the dictionary of file types for which there are supported format-specific icons in the file sidebar
+
+***
+
+If all goes as intended, the outcome should hopefully reflect something akin to the screenshot below.
+
+[
+  <img
+    src="https://github.com/IsenrichO/machine-config/raw/master/assets/Sublime_Text_Custom_Theme.png"
+    alt="Custom theme and color scheme with added packages has allowed me this awesome workspace."
+    style="position: relative; width: 75%; margin: auto;" />
+](https://github.com/IsenrichO/machine-config/raw/master/assets/Sublime_Text_Custom_Theme.png)
