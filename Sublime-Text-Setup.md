@@ -1,5 +1,3 @@
-# Sublime Text Setup
-
 I've spent embarrassingly much time messing with Sublime's user settings file [Ref. _User/Preferences.sublime-settings_], but have finally got something I think I can tolerate for a while. Before just transposing this settings object to another Sublime dist, remember that a bevy of packages and plugins must first be installed for many of those settings fields to have recognizable effects. Alphabetically, we have:
 
 + [**AdvancedNewFile:**](https://github.com/skuroda/Sublime-AdvancedNewFile) Allows for faster creation of new files
