@@ -1,0 +1,46 @@
+<canvas id="barcodeCanvas"></canvas>
+<input type="file" id="fileInput" accept="image/*">
+<p>Decoded Barcode: <span id="result"></span></p>
+
+<script>
+    async function decodeBarcodeFromCanvas(canvas) {
+        if (!("BarcodeDetector" in window)) {
+            alert("BarcodeDetector API is not supported in this browser.");
+            return;
+        }
+
+        const barcodeDetector = new BarcodeDetector({ formats: ["code_128"] });
+        try {
+            const detectedCodes = await barcodeDetector.detect(canvas);
+            if (detectedCodes.length > 0) {
+                document.getElementById("result").innerText = detectedCodes[0].rawValue;
+            } else {
+                document.getElementById("result").innerText = "No barcode detected.";
+            }
+        } catch (err) {
+            console.error("Barcode detection failed:", err);
+        }
+    }
+
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const image = new Image();
+            image.src = e.target.result;
+            image.onload = function() {
+                const canvas = document.getElementById("barcodeCanvas");
+                const ctx = canvas.getContext("2d");
+
+                canvas.width = image.width;
+                canvas.height = image.height;
+                ctx.drawImage(image, 0, 0, image.width, image.height);
+
+                decodeBarcodeFromCanvas(canvas);
+            };
+        };
+        reader.readAsDataURL(file);
+    });
+</script>
